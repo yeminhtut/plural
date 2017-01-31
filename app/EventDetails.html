@@ -1,0 +1,39 @@
+<html ng-app="eventsApp">
+<head>
+	<title>Event Registration</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+</head>
+<body>
+	<div class="container" ng-controller="EventController">
+		<div class="navbar">
+			<ul class="nav"></ul>
+		</div>
+		<h1>{{event.name}}</h1>
+		<img ng-src="{{event.imageUrl}}">
+		<div class="row">
+			<div class="col-md-6">
+				{{event.date}}
+			</div>
+			<div class="col-md-6">
+				{{event.time}}
+			</div>
+			<span>{{event.location.address}}</span>
+			<span>{{event.location.city}}</span>
+			<span>{{event.location.province}}</span>
+		</div>
+		<hr>
+		<ul>
+			<li ng-repeat="session in event.sessions">
+				{{session.name}}
+			</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/js/app.js"></script>
+	<script type="text/javascript" src="/js/controllers/EventController.js"></script>
+</body>
+</html>
